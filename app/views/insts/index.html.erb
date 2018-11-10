@@ -1,0 +1,29 @@
+<h1>インスタ一覧</h1>
+
+
+<table>
+  <tr>
+    <th>投稿者</th>
+    <th>タイトル</th>
+    <th>内容</th>
+    <th>画像</th>
+  </tr>
+
+<% @insts.each do |inst| %>
+  <tr>
+    <td><%= inst.user.name %></td>
+    <td><%= inst.title %></td>
+    <td><%= inst.content %></td>
+    <td><%= inst.image %></td>
+    <td><%= link_to '投稿を確認する', inst_path(inst.id) %></td>
+    <% if inst.user_id == current_user.id %>
+      <td><%= link_to '投稿を編集する', edit_inst_path(inst.id), data: { confirm: '本当に編集していいですか？' }%></td>
+      <td><%= link_to '投稿を削除する', inst_path(inst.id), method: :delete , data: { confirm: '本当に削除していいですか？' } %></td>
+    <% end %>
+  </tr>
+<% end %>
+</table>
+
+<br>
+
+<%= link_to '新しくインスタを投稿する', new_inst_path %>
