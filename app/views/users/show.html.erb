@@ -3,9 +3,9 @@
 <p>メールアドレス: <%= @user.email %></p>
 
 <% @favorite_insts.each do |inst| %>
-  <p>タイトル　<%=inst.inst.title %></p>
-  <p>コンテンツ　<%=inst.inst.content %></p>
-  <p>画像　<%=inst.inst.image %></p>
+  <p>タイトル　<%=inst.title %></p>
+  <p>コンテンツ　<%=inst.content %></p>
+  <p>画像　<%=inst.image %></p>
 <% end %>
 
 <%= link_to '投稿一覧画面に戻る', insts_path %>
