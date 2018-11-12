@@ -14,7 +14,7 @@
     <td><%= inst.user.name %></td>
     <td><%= inst.title %></td>
     <td><%= inst.content %></td>
-    <td><%= inst.image %></td>
+    <td><%= image_tag inst.image.url, :size => "50x50" %></td>
     <td><%= link_to '投稿を確認する', inst_path(inst.id) %></td>
     <% if current_user %>
       <% if inst.user_id == current_user.id %>

@@ -3,17 +3,20 @@
 <%= form_with(model: @inst, local: true, url: insts_path) do |form| %>
   <%= form.hidden_field :title %>
   <%= form.hidden_field :content %>
-  <%= form.hidden_field :image %>
+  <%= form.hidden_field :image_cache %>
 
   <p>タイトル:<%= @inst.title %></p>
   <p>本文:<%= @inst.content %></p>
-  <p>画像:<%= @inst.image %></p>
+  <p>
+  <strong>画像:</strong>
+  <%= image_tag @inst.image.url %>
+</p>
   <%= form.submit  "登録する" %>
 <% end %>
 
 <%= form_with(model: @inst, url: new_inst_path, local: true, method: 'get') do |form| %>
   <%= form.hidden_field :title %>
   <%= form.hidden_field :content %>
-  <%= form.hidden_field :image %>
+  <%= form.hidden_field :image_cashe %>
   <%= form.submit "もどる" , name: 'back'%>
 <% end %>

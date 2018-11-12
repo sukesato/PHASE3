@@ -1,7 +1,11 @@
 <h1>投稿詳細画面</h1>
+<p>投稿者<%= @inst.user.name%></p>
 <p>タイトル: <%= @inst.title %></p>
 <p>内容: <%= @inst.content %></p>
-<p>画像: <%= @inst.image %></p>
+<p>
+  <strong>画像:</strong>
+  <%= image_tag @inst.image.url, :size => "90x90" %>
+</p>
 
 <% unless @inst.user_id == current_user.id %>
   <% if @favorite.present? %>
