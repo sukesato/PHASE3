@@ -1,26 +1,38 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Phase3</title>
+    <title>Nightglam</title>
     <%= csrf_meta_tags %>
-
+    <meta name="viewport" content="width=device-width">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <% flash.each do |key, value| %>
+    <header>
+    <ul>
+      <% flash.each do |key, value| %>
       <%= content_tag(:div, value, class: "#{key}") %>
     <% end %>
     <% if logged_in? %>
       <!-- ログインしている場合 -->
-      <%= link_to "Profile", user_path(current_user.id) %>
-      <%= link_to "Logout", session_path(current_user.id), method: :delete %>
+      <li><%= link_to 'TopPage', root_path %></li>
+      <li><%= link_to "Profile", user_path(current_user.id) %></li>
+      <li><%= link_to "Logout", session_path(current_user.id), method: :delete %></li>
     <% else %>
     　<!-- ログインしていない場合 -->
-    　<%= link_to "Sign up", new_user_path %>
-      <%= link_to "Login", new_session_path %>
+    　<li><%= link_to 'TopPage', root_path %></li>
+    　<li><%= link_to "Sign up", new_user_path %></li>
+      <li><%= link_to "Login", new_session_path %></li>
     <% end %>
+    </ul>
+  </header>
+    
     <%= yield %>
+    
+    <footer>
+    <p>運営会社ESZ株式会社</p>
+    <p>© 2017-2018 Copyright ESZ Corp.</p>
+  </footer>
   </body>
 </html>

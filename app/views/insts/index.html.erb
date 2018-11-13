@@ -1,13 +1,17 @@
 <h1>インスタ一覧</h1>
 
-
-<table>
+<table class = "table table-bordered"　width="10">
+  <thead>
   <tr>
     <th>投稿者</th>
     <th>タイトル</th>
     <th>内容</th>
     <th>画像</th>
+    <th>投稿確認</th>
+    <th>投稿編集</th>
+    <th>投稿削除</th>
   </tr>
+  </thead>
 
 <% @insts.each do |inst| %>
   <tr>
@@ -15,19 +19,19 @@
     <td><%= inst.title %></td>
     <td><%= inst.content %></td>
     <td><%= image_tag inst.image.url, :size => "50x50" %></td>
-    <td><%= link_to '投稿を確認する', inst_path(inst.id) %></td>
+    <td class = "toukou"><%= link_to '投稿を確認する', inst_path(inst.id), class: "btn btn-info" %></td>
     <% if current_user %>
       <% if inst.user_id == current_user.id %>
-        <td><%= link_to '投稿を編集する', edit_inst_path(inst.id), data: { confirm: '本当に編集していいですか？' }%></td>
-        <td><%= link_to '投稿を削除する', inst_path(inst.id), method: :delete , data: { confirm: '本当に削除していいですか？' } %></td>
+        <td class = "toukou"><%= link_to '投稿を編集する', edit_inst_path(inst.id), data: { confirm: '本当に編集していいですか？' }, class: "btn btn-info"%></td>
+        <td class = "toukou"><%= link_to '投稿を削除する', inst_path(inst.id), method: :delete , data: { confirm: '本当に削除していいですか？' }, class: "btn btn-info" %></td>
       <% end %>
     <% end %>
   </tr>
 <% end %>
 </table>
 
+
 <br>
+<%= link_to '新しくインスタを投稿する', new_inst_path, class: "btn btn-info" %>
 
-<%= link_to '新しくインスタを投稿する', new_inst_path %>
-
-<%= link_to 'トップページに戻る', root_path %>
+<%= link_to 'トップページに戻る', root_path, class: "btn btn-info" %>

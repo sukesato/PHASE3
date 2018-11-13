@@ -1,3 +1,92 @@
-// Place all the styles related to the top controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+header {
+  width: 100%;
+  background-color: #00ccff;
+  height: 54px;
+}
+
+header ul {
+  margin: 0 auto;
+  list-style: none;
+}
+
+header ul a {
+  display: block;
+  padding: 15px;
+  text-decoration: none;
+  color: white;
+}
+
+header li {
+  float: left;
+  width: auto;
+}
+
+header ul:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+footer {
+  width: 100%;
+  background-color:#00ccff;
+  padding: 20px 0 10px 0;
+  color: white;
+  margin: auto;
+  padding-bottom: 10px;
+  font-size: 12px;
+  position: absolute;
+  bottom: 0;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+  
+  
+}
+
+body {
+  text-align: center;
+  
+}
+
+.main-header {
+  padding-bottom: 100%;
+  width: 100%;
+  background-size: cover;
+  
+  background: url("phase3_001.jpg") center center / cover no-repeat fixed;
+  background-attachment: fixed;
+}
+
+.main-header h1{
+  display: block;
+  margin: 0 auto;
+  width: 25%;
+  padding-top: 20%;
+  padding-right: 30%;
+  font-size:7vw;
+  color:#FFE10A
+}
+
+.main-header p{
+  display: block;
+  margin: 0 auto;
+  width: 25%;
+  padding-top: 20%;
+  color:red;
+  font-size:3vw;
+}
+
+.btn btn-info top {
+  margin-top:2%;
+}
+
+body {
+  background: url(background-photo.jpg) center center / cover no-repeat fixed;
+}
+
+.main-header p.introduction{
+  color:white;
+}

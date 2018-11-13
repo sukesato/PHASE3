@@ -1,3 +1,17 @@
 // Place all the styles related to the insts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.table{
+width: 100%;
+table-layout: fixed;
+word-break: break-all;
+word-wrap: break-all;
+}
+
+.btn {
+white-space: normal;
+}
+
+.input input[type=file]{
+    margin:  0 auto;
+}
