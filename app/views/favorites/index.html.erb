@@ -1,0 +1,27 @@
+<h1><%= current_user.name %>さんのお気に入り</h1>
+
+<table class = "table table-bordered"　width="10">
+  <thead>
+  <tr>
+    <th class = "information">投稿者</th>
+    <th class = "information">タイトル</th>
+    <th class = "information">内容</th>
+    <th class = "information">画像</th>
+  </tr>
+  </thead>
+
+<% @favorites.each do |favorite| %>
+  <tr>
+    <td><%= favorite.inst.user.name %></td>
+    <td><%= favorite.inst.title %></td>
+    <td><%= favorite.inst.content %></td>
+    <td><%= image_tag favorite.inst.image.url, :size => "50x50" %></td>
+  </tr>
+<% end %>
+</table>
+
+
+<br>
+<%= link_to '投稿一覧画面に戻る', insts_path, class: "btn btn-info top" %>
+
+<%= link_to 'トップページに戻る', root_path, class: "btn btn-info" %>

@@ -2,10 +2,4 @@
 
 <p>メールアドレス: <%= @user.email %></p>
 
-<% @favorite_insts.each do |inst| %>
-  <p>タイトル　<%=inst.title %></p>
-  <p>コンテンツ　<%=inst.content %></p>
-  <p>画像　<%=inst.image %></p>
-<% end %>
-
 <%= link_to '投稿一覧画面に戻る', insts_path, class: "btn btn-info top" %>
